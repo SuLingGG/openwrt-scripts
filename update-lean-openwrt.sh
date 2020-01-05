@@ -38,10 +38,6 @@ echo -e "\033[32mUpdate Rclone-OpenWrt.\033[0m"
 cd ../Rclone-OpenWrt
 git pull
 
-echo -e "\033[32mUpdate luci-app-vssr.\033[0m"
-cd ../luci-app-vssr
-git pull
-
 echo -e "\033[32mUpdate luci-theme-argon.\033[0m"
 cd ../luci-theme-argon
 git pull
