@@ -52,10 +52,6 @@ echo -e "\033[32mUpdate openwrt-iptvhelper.\033[0m"
 cd ../openwrt-iptvhelper
 git pull
 
-echo -e "\033[32mUpdate luci-app-vssr.\033[0m"
-cd ../luci-app-vssr
-git pull
-
 echo -e "\033[32mUpdate default settings.\033[0m"
 cd ../default-settings
 git pull
