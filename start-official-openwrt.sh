@@ -52,9 +52,6 @@ git clone https://github.com/ElonH/Rclone-OpenWrt
 echo -e "\033[32mAdd openwrt-iptvhelper.\033[0m"
 git clone https://github.com/riverscn/openwrt-iptvhelper
 
-echo -e "\033[32mAdd luci-app-vssr.\033[0m"
-git clone https://github.com/jerrykuku/luci-app-vssr
-
 echo -e "\033[32mAdd default settings.\033[0m"
 git clone https://github.com/SuLingGG/default-settings
 
