@@ -9,7 +9,7 @@ git clone --depth=1 https://github.com/coolsnowwolf/lede
 
 echo -e "\033[32mCopy Lean's packages to ./package/lean.\033[0m"
 cd lede/package/lean
-cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,luci-app-adbyby-plus,luci-app-baidupcs-web,luci-app-dnspod,luci-app-familycloud,luci-app-kodexplorer,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-unblockmusic,luci-app-verysync,luci-app-zerotier,n2n_v2,npc,UnblockNeteaseMusic,verysync,luci-app-vsftpd,vsftpd-alt} "../../../lean"
+cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,luci-app-adbyby-plus,luci-app-baidupcs-web,luci-app-dnspod,luci-app-familycloud,luci-app-kodexplorer,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-unblockmusic,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,n2n_v2,npc,UnblockNeteaseMusic,verysync,vsftpd-alt} "../../../lean"
 cp -r {luci-app-smartdns,smartdns} "../../../"
 cd "../../../"
 rm -rf lede
@@ -51,6 +51,11 @@ git clone https://github.com/ElonH/Rclone-OpenWrt
 
 echo -e "\033[32mAdd openwrt-iptvhelper.\033[0m"
 git clone https://github.com/riverscn/openwrt-iptvhelper
+
+echo -e "\033[32mAdd luci-app-diskman.\033[0m"
+git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
+mkdir parted
+cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 echo -e "\033[32mAdd default settings.\033[0m"
 git clone https://github.com/SuLingGG/default-settings
