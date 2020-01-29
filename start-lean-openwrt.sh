@@ -31,6 +31,11 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome
 echo -e "\033[32mAdd Rclone-OpenWrt.\033[0m"
 git clone https://github.com/ElonH/Rclone-OpenWrt
 
+echo -e "\033[32mAdd luci-app-diskman.\033[0m"
+git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
+mkdir parted
+cp luci-app-diskman/Parted.Makefile parted/Makefile
+
 echo -e "\033[32mAdd luci-theme-argon.\033[0m"
 git clone https://github.com/jerrykuku/luci-theme-argon
 rm -rf ../lean/luci-theme-argon
