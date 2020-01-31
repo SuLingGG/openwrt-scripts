@@ -56,7 +56,7 @@ echo -e "\033[32mAdd openwrt-iptvhelper.\033[0m"
 git clone https://github.com/riverscn/openwrt-iptvhelper
 
 echo -e "\033[32mAdd luci-app-diskman.\033[0m"
-git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
+git clone https://github.com/lisaac/luci-app-diskman
 mkdir parted
 cp luci-app-diskman/Parted.Makefile parted/Makefile
 
