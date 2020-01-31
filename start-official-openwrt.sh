@@ -57,8 +57,8 @@ git clone https://github.com/riverscn/openwrt-iptvhelper
 
 echo -e "\033[32mAdd luci-app-diskman.\033[0m"
 git clone https://github.com/lisaac/luci-app-diskman
-mkdir parted
-cp luci-app-diskman/Parted.Makefile parted/Makefile
+mkdir -p package/parted
+cp -i package/luci-app-diskman/Parted.Makefile package/parted/Makefile
 
 echo -e "\033[32mAdd default settings.\033[0m"
 git clone https://github.com/SuLingGG/default-settings
