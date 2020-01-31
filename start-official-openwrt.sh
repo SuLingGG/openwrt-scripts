@@ -4,15 +4,18 @@ echo -e "\033[32mClone offical openwrt sources. \033[0m"
 git clone https://github.com/openwrt/openwrt
 
 echo -e "\033[32mClone Lean's latest sources. (use --depth=1) \033[0m"
-mkdir -p package/lean && cd package
+cd openwrt/package
 git clone --depth=1 https://github.com/coolsnowwolf/lede
 
-echo -e "\033[32mCopy Lean's packages to ./package/lean.\033[0m"
+echo -e "\033[32mCopy Lean's packages to openwrt/package/lean.\033[0m"
+mkdir lean
 cd lede/package/lean
 cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,luci-app-adbyby-plus,luci-app-baidupcs-web,luci-app-dnspod,luci-app-familycloud,luci-app-kodexplorer,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-unblockmusic,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,n2n_v2,npc,UnblockNeteaseMusic,verysync,vsftpd-alt} "../../../lean"
 cp -r {luci-app-smartdns,smartdns} "../../../"
 cd "../../../"
 rm -rf lede
+
+# Clone community packages to package/community
 mkdir community && cd community
 
 echo -e "\033[32mAdd mentohust & luci-app-mentohust.\033[0m"
@@ -60,11 +63,8 @@ cp luci-app-diskman/Parted.Makefile parted/Makefile
 echo -e "\033[32mAdd default settings.\033[0m"
 git clone https://github.com/SuLingGG/default-settings
 
-echo -e "\033[32mCopy packages to openwrt/package.\033[0m"
-cp -r ../* ../../openwrt/package
-
 echo -e "\033[32mAdd Lienol's feeds.\033[0m"
-cd ../../openwrt
+cd ../..
 echo "src-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
 
 echo -e "\033[32mCompile po2lmo.\033[0m"
