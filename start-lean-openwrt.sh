@@ -37,7 +37,7 @@ mkdir parted
 cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 echo -e "\033[32mAdd luci-theme-argon.\033[0m"
-git clone https://github.com/jerrykuku/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 rm -rf ../lean/luci-theme-argon
 
 echo -e "\033[32mAdd Lienol's feeds.\033[0m"
