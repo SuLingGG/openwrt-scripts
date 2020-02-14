@@ -10,9 +10,8 @@ git clone --depth=1 https://github.com/coolsnowwolf/lede
 echo -e "\033[32mCopy Lean's packages to openwrt/package/lean.\033[0m"
 mkdir lean
 cd lede/package/lean
-cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,luci-app-adbyby-plus,luci-app-baidupcs-web,luci-app-dnspod,luci-app-familycloud,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-unblockmusic,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,n2n_v2,npc,UnblockNeteaseMusic,verysync,vsftpd-alt} "../../../lean"
+cp -r {adbyby,antfs,antfs-mount,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,luci-app-adbyby-plus,luci-app-baidupcs-web,luci-app-dnspod,luci-app-familycloud,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-unblockmusic,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,n2n_v2,npc,UnblockNeteaseMusic,verysync,vsftpd-alt} "../../../lean"
 cp -r {luci-app-smartdns,smartdns} "../../../"
-cp -r ../kernel/antfs ../../../kernel
 cd "../../../"
 rm -rf lede
 
