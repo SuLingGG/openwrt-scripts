@@ -47,4 +47,16 @@ echo -e "\033[32mUpdate & Install feeds.\033[0m"
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+echo -e "\033[32mChange timezone.\033[0m"
+sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
+echo "Done."
+
+echo -e "\033[32mChange default theme.\033[0m"
+sed -i 's/config internal themes/config internal themes\n    option Argon  \"\/luci-static\/argon\"/g' feeds/luci/modules/luci-base/root/etc/config/luci
+echo "Done."
+
+echo -e "\033[32mRemove bootstrap theme.\033[0m"
+sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+echo "Done."
+
 exit 0
