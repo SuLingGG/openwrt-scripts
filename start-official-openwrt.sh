@@ -22,7 +22,7 @@ popd
 echo -e "\033[32mCopy Lean's packages to openwrt/package/lean.\033[0m"
 mkdir package/lean
 pushd package/lede/package/lean
-cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,ipt2socks,kcptun,luci-app-adbyby-plus,luci-app-autoreboot,luci-app-baidupcs-web,luci-app-familycloud,luci-app-flowoffload,luci-app-kodexplorer,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-usb-printer,luci-app-unblockmusic,luci-app-unblockneteasemusic-go,luci-app-unblockneteasemusic-mini,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,n2n_v2,npc,pdnsd-alt,shadowsocksr-libev,simple-obfs,srelay,trojan,UnblockNeteaseMusic,UnblockNeteaseMusicGo,v2ray,v2ray-plugin,verysync,vsftpd-alt} "../../../lean"
+cp -r {adbyby,automount,baidupcs-web,ddns-scripts_aliyun,ddns-scripts_dnspod,ipt2socks,kcptun,luci-app-adbyby-plus,luci-app-autoreboot,luci-app-baidupcs-web,luci-app-dockerman,luci-app-familycloud,luci-app-kodexplorer,luci-app-mwan3helper,luci-app-n2n_v2,luci-app-netdata,luci-app-nps,luci-app-syncdial,luci-app-usb-printer,luci-app-unblockmusic,luci-app-unblockneteasemusic-go,luci-app-unblockneteasemusic-mini,luci-app-verysync,luci-app-vsftpd,luci-app-xlnetacc,luci-app-zerotier,luci-lib-docker,n2n_v2,npc,pdnsd-alt,shadowsocksr-libev,simple-obfs,srelay,trojan,UnblockNeteaseMusic,UnblockNeteaseMusicGo,v2ray,v2ray-plugin,verysync,vsftpd-alt} "../../../lean"
 popd
 
 echo -e "\033[32mAdd upx & ucl.\033[0m"
@@ -55,10 +55,6 @@ git clone https://github.com/Leo-Jo/luci-app-koolproxyR
 
 echo -e "\033[32mAdd luci-app-onliner. (need luci-app-nlbwmon)\033[0m"
 git clone https://github.com/rufengsuixing/luci-app-onliner
-
-echo -e "\033[32mAdd luci-app-dockerman.\033[0m"
-git clone https://github.com/lisaac/luci-lib-docker
-git clone https://github.com/lisaac/luci-app-dockerman
 
 echo -e "\033[32mAdd luci-app-adguardhome.\033[0m"
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
@@ -104,36 +100,11 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/subconver
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/jpcre2
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/rapidjson
 
-echo -e "\033[32mAdd fullconenat patch.\033[0m"
-git clone https://github.com/QiuSimons/openwrt-fullconenat
-popd
-
 echo -e "\033[32mCompile po2lmo.\033[0m"
 git clone https://github.com/openwrt-dev/po2lmo
 pushd po2lmo
 make && sudo make install
 popd
-
-echo -e "\033[32mFirewall patch.\033[0m"
-mkdir package/network/config/firewall/patches
-pushd package/network/config/firewall/patches
-wget https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/fullconenat.patch
-popd
-
-echo -e "\033[32mLuCI Patch.\033[0m"
-pushd feeds/luci
-wget -O- https://github.com/LGA1150/fullconenat-fw3-patch/raw/master/luci.patch | git apply
-popd
-
-echo -e "\033[32mKernel patch.\033[0m"
-# If you seclect master branch:
-pushd target/linux/generic/hack-4.19
-wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-4.19/952-net-conntrack-events-support-multiple-registrant.patch
-popd
-# If you seclect openwrt-19.07 branch:
-# pushd target/linux/generic/hack-4.14
-# wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-4.14/952-net-conntrack-events-support-multiple-registrant.patch
-# popd
 
 echo -e "\033[32mEnable irqbalance.\033[0m"
 sed -i 's/0/1/g' feeds/packages/utils/irqbalance/files/irqbalance.config
