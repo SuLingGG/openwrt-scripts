@@ -22,10 +22,6 @@ git clone https://github.com/Leo-Jo/luci-app-koolproxyR
 echo -e "\033[32mAdd luci-app-onliner. (need luci-app-nlbwmon)\033[0m"
 git clone https://github.com/rufengsuixing/luci-app-onliner
 
-echo -e "\033[32mAdd luci-app-dockerman.\033[0m"
-git clone https://github.com/lisaac/luci-lib-docker
-git clone https://github.com/lisaac/luci-app-dockerman
-
 echo -e "\033[32mAdd luci-app-adguardhome.\033[0m"
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 
