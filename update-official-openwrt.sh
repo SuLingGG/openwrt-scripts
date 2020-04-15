@@ -103,6 +103,6 @@ echo -e "\033[32mConvert translation.\033[0m"
 curl -s https://raw.githubusercontent.com/project-openwrt/build-scripts/master/convert_translation.sh | bash || true
 
 echo -e "\033[32mRemove upx.\033[0m"
-curl -s https://raw.githubusercontent.com/SuLingGG/OpenWrt-Rpi/master/scripts/remove_upx.sh | bash || true
+curl -s https://raw.githubusercontent.com/SuLingGG/OpenWrt-Rpi/master/scripts/remove-upx.sh | bash || true
 
 exit 0
